@@ -1,0 +1,123 @@
+Why Go?
+27 Aug 2016
+
+Vladislav Mitov
+Miracl
+vladislav.mitov@gmail.com
+@VladislavMitov
+
+* Go is...
+
+- general-purpose programming language
+- open source
+- developed at Google
+
+.play hello.go
+
+* Go is used by...
+
+- Google, YouTube
+- Facebook, Twitter
+- Docker
+- Uber, Hailo
+- eBay
+- GitHub
+- Netflix
+- SoundCloud
+- SpaceX
+- *MIRACL*
+
+* Guiding principles in the design
+
+.image gopher.jpg
+
+* Go has simple syntax
+
+- only 25 keywords (C - 35, Java - 50)
+- only one loop type - for
+- no fricking semicolons (;)
+- no classes
+
+.play for.go /^func main/,
+
+* Go doesn't break backwards compatibility
+
+- 5 years
+- 7 point versions
+- no backwards incompatible changes in the API
+
+* No exception
+
+- exceptions are slow
+- piratically forces you to handle them
+
+* Protects developers from making mistakes
+
+- no pointer arithmetics
+- no functions that hide complexity
+- no unused imports
+- no unused variables
+
+* Fast compilation time
+
+- clever dependency analysis
+- compile-time error on unused dependencies
+- can be used as interpreted language
+
+* Tool chain
+
+- go run
+- go get - works with github.com, no PyPi, RubyGems, npm
+- go fmt - defines and enforces consistent style
+- many more
+
+* go static analysis tools
+
+- go vet
+- go race detection
+
+* Static linking
+
+- produces statically linked binaries
+- runs in scratch containers
+
+* Cross compilation
+
+* Interfaces
+
+- implicit (types doesn't need to say what they implement) - decouples the implementation packages from the packages that define the interfaces
+- lightweight - only one or two methods, in fact the most common interface in the language has zero methods
+
+* Example from our own Miracl cryptography go implementations
+
+- go/io
+
+.code reader.go
+
+* Example from our own Miracl cryptography go implementations
+
+.code rng.go
+
+* Example from our own Miracl cryptography go implementations
+
+.play rng_example.go
+
+* Concurrency
+
+- NOT parallelism
+- goroutines and channels
+- say 'go' and any function goes async
+- no callbacks (if not needed)
+
+* Simple Producer-Consumer example
+
+.play concurrency.go /^var msgs/,
+
+* Is Go good for applications that have to be scalable?
+
+- easy to write
+- easy to read and maintain
+- rich support for concurrency
+- builds to a binary
+- builds, starts and runs fast
+- remember those scratch containers
